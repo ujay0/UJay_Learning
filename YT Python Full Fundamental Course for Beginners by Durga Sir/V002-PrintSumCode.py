@@ -1,4 +1,4 @@
-a=10
-b=20
+a = 10
+b = 20
 
-print("""Sum""",a+b)
+print("""Sum""", a + b)

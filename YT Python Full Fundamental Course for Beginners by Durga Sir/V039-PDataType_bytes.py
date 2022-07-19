@@ -1,9 +1,8 @@
-l=[10,20,30,40]
+l = [10, 20, 30, 40]
 b = bytes(l)
-print('Type b:',type(b))
+print('Type b:', type(b))
 for x in b:
-	print('x in b:',x)
-
+    print('x in b:', x)
 
 # l1=[10,20,30,40,256]
 # b1 = bytes(l1)			# ValueError: bytes must be in range(0, 256)

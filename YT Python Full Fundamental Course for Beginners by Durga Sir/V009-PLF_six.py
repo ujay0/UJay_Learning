@@ -1,6 +1,6 @@
-a=10
+a = 10
 print(type(a))
-a='DURGA'
+a = 'DURGA'
 print(type(a))
-a=True
+a = True
 print(type(a))
