@@ -1,0 +1,3 @@
+Welcome to the Python Fundamentals Course - For Beginners.
+This is a very easy course, even a kid can
+learn this.
