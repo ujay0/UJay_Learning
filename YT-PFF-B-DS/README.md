@@ -1,3 +1,4 @@
+Author: Utkarsh Jaswani
 
 Basic Python Programming Fundamentals as taught by Durgs Sir on Durga Software Solutions YouTube channel. 
 
