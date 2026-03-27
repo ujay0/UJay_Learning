@@ -1,3 +1,43 @@
+"""
+Inheritance
+In this challenge, we practice using inheritance. Check the attached tutorial for more details.
+Task
+You are given two classes, Person and Student, where Person is the base class and Student is
+the derived class. Completed code for Person and a declaration for Student are provided in the editor. Observe that Student inherits all the properties of Person.
+Complete the Student class by writing the following:
+A Student class constructor, which has 4 parameters:
+A string, firstName.
+A string, lastName.
+An integer, id.
+An integer array (or vector) of test scores, scores.
+A char calculate() method that calculates a Student object's average and returns the grade character representative of their average score:
+O for 90 <= average <= 100
+E for 80 <= average < 90
+A for 70 <= average < 80
+P for 55 <= average < 70
+D for 40 <= average < 55
+T for average < 40
+Input Format
+The locked stub code in your editor reads input from stdin and passes it to the Student class constructor. It also calls the calculate method and prints the grade returned.
+The first line contains firstName, lastName, and id, separated by a space. The second line contains the number of test scores. The third line of input contains the space-separated test scores.
+Constraints
+1 <= |firstName|, |lastName| <= 10
+1 <= id <= 10^7
+0 <= scores[i] <= 100
+Output Format
+Output is handled by the locked stub code in the editor. Your output will be correct if your Student class constructor and calculate() method are properly implemented.
+Sample Input
+Heraldo Memelli 8135627
+2
+100 80
+Sample Output
+Name: Memelli, Heraldo
+ID: 8135627
+Hence Grade: O
+Explanation
+The student has two test scores: 100 and 80. The average is (100 + 80) / 2 = 90. Since 90 is between 90 and 100, the grade is O.
+
+"""
 class Person:
 	def __init__(self, firstName, lastName, idNumber):
 		self.firstName = firstName
