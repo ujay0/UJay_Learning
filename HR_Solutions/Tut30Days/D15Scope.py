@@ -23,22 +23,24 @@ class Difference:
 
 # End of Difference class
 
-_ = input()
+_ = input("Enter the number of elements in the array: ")
+print("Enter the elements of the array (space-separated): ")
 a = [int(e) for e in input().split(' ')]
 d = Difference(a)
 d.computeDifference()
-print(d.maximumDifference)
+print(f"Maximum difference: {d.maximumDifference}")
+print("_______________-----------------F--I--N-----------------_______________")
 
 
 # Find the maximum difference between any two elements in the array
 
 # Alternate solution using sorting
-# def computeDiff(arr):
-#         arr.sort()
-#         maximumDifference = arr[len(arr)-1]-arr[0]
-#         return maximumDifference
+def computeDiff(arr):
+        arr.sort()
+        maximumDifference = arr[len(arr)-1]-arr[0]
+        return maximumDifference
 
-# if __name__ == '__main__':
-#     # Get array input from user
-#     arr = list(map(int, input("Enter array elements (space-separated): ").split()))
-#     print("Maximum difference:", computeDiff(arr))    
+if __name__ == '__main__':
+    # Get array input from user
+    arr = list(map(int, input("Enter array elements (space-separated): ").split()))
+    print("Maximum difference:", computeDiff(arr))    
