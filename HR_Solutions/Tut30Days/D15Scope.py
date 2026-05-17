@@ -1,6 +1,3 @@
-
-
-
 # The absolute difference between two integers,  and , is written as . 
 # The maximum absolute difference between two integers in a set of 
 # positive integers, elements, 
@@ -28,13 +25,9 @@ class Difference:
 
 _ = input()
 a = [int(e) for e in input().split(' ')]
-
 d = Difference(a)
 d.computeDifference()
-
 print(d.maximumDifference)
-
-
 
 
 # Find the maximum difference between any two elements in the array
@@ -48,6 +41,4 @@ print(d.maximumDifference)
 # if __name__ == '__main__':
 #     # Get array input from user
 #     arr = list(map(int, input("Enter array elements (space-separated): ").split()))
-#     print("Maximum difference:", computeDiff(arr))
-
-    
+#     print("Maximum difference:", computeDiff(arr))    
