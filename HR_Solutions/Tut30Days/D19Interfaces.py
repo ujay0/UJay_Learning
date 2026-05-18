@@ -10,6 +10,9 @@ class AdvancedArithmetic(object):
     def divisorSum(n):
         raise NotImplementedError
     
+
+# To solve this challenge, we must first take all the numbers 
+# from 1 to n, find the divisors of n, and sum them up.
 class Calculator(AdvancedArithmetic):
     def divisorSum(self, n):
         sum = 0
