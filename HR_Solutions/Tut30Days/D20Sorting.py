@@ -20,6 +20,16 @@ import random
 import re
 import sys
 
+def sorting(a):
+    numberOfSwaps = 0
+    for i in range(len(a)):
+        for j in range(len(a)-1):
+            if a[j]>a[j+1]:
+                temp = a[j]
+                a[j]=a[j+1]
+                a[j+1]=temp
+                numberOfSwaps += 1
+    return numberOfSwaps
 
 if __name__ == '__main__':
     n = int(input().strip())
@@ -27,17 +37,18 @@ if __name__ == '__main__':
     a = list(map(int, input().rstrip().split()))
 
     # Write your code here
-    numberOfSwaps = 0
-    for j in range(0,n):
-        for i in range(0, n-1):
-            if a[i] > a [i+1]:
-                a[i]   = a[i] + a[i+1]
-                a[i+1] = a[i] - a[i+1]
-                a[i]   = a[i] - a [i+1]
-                # print(f" a[{i}], a[{i}+1]: {a[i]} , {a[i+1]}") # Checking the swap
-                numberOfSwaps+=1
-                if numberOfSwaps == 0:
-                    break
+    numberOfSwaps = sorting(a)
+    # numberOfSwaps = 0
+    # for j in range(0,n):
+    #     for i in range(0, n-1):
+    #         if a[i] > a [i+1]:
+    #             a[i]   = a[i] + a[i+1]
+    #             a[i+1] = a[i] - a[i+1]
+    #             a[i]   = a[i] - a [i+1]
+    #             # print(f" a[{i}], a[{i}+1]: {a[i]} , {a[i+1]}") # Checking the swap
+    #             numberOfSwaps+=1
+    #             if numberOfSwaps == 0:
+    #                 break
     
     
     print(f"Array is sorted in {numberOfSwaps} swaps.")
