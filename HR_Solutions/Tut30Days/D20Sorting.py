@@ -34,6 +34,7 @@ if __name__ == '__main__':
                 a[i]   = a[i] + a[i+1]
                 a[i+1] = a[i] - a[i+1]
                 a[i]   = a[i] - a [i+1]
+                # print(f" a[{i}], a[{i}+1]: {a[i]} , {a[i+1]}") # Checking the swap
                 numberOfSwaps+=1
                 if numberOfSwaps == 0:
                     break
