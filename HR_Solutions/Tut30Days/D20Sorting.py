@@ -20,6 +20,9 @@ import random
 import re
 import sys
 
+# To complete this challenge, you must add a scope variable that keeps
+# a running tally of all swaps that occur during execution.
+
 def sorting(a):
     numberOfSwaps = 0
     for i in range(len(a)):
