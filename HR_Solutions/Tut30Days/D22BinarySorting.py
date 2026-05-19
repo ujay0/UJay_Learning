@@ -28,8 +28,10 @@ class Solution:
         if root is None:
             return -1
         else:
+            # Calculate the height of each subtree
             leftHeight = self.getHeight(root.left)
             rightHeight = self.getHeight(root.right)
+            # Return the maximum of the two heights plus one for the current node
             if leftHeight > rightHeight:
                 return leftHeight + 1
             else:
