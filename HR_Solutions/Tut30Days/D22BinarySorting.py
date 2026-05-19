@@ -12,6 +12,9 @@ class Node:
         self.data = data
 class Solution:
     def insert(self,root,data):
+        # Base case: If the current node (root) is None, we have found the correct
+        # position to insert the new data. We create a new Node with the given data 
+        # and return it to be linked to its parent node.
         if root==None:
             return Node(data)
         else:
