@@ -2,8 +2,7 @@
 # the tree's root and its furthest leaf. You are given a pointer, root, 
 # pointing to the root of a binary search tree. Complete the getHeight 
 # function provided in your editor so that it returns the height of the 
-# binary search tree.
-
+# binary search tree. 
 
 # The Node class is defined as follows:
 class Node:
@@ -18,14 +17,19 @@ class Solution:
         if root==None:
             return Node(data)
         else:
-            # Recursive case: If the current node is not None, we need to determine whether to insert the new data in the left subtree or the right subtree. 
-            # We compare the new data with the current node's data. If the new data is less than or equal to the current
-            # node's data, we will insert it into the left subtree. Otherwise, we will insert it into the right subtree.
+            # Recursive case: If the current node is not None, we need to determine 
+            # whether to insert the new data in the left subtree or the right subtree. 
+            # We compare the new data with the current node's data. If the new data is 
+            # less than or equal to the current node's data, we will insert it into the 
+            # left subtree. Otherwise, we will insert it into the right subtree.
             if data<=root.data:
                 cur=self.insert(root.left,data)
                 root.left=cur
             else:
-                # If the new data is greater than the current node's data, we will insert it into the right subtree. We make a recursive call to insert the new data into the right subtree and then link the returned node back to the current node's right pointer.
+                # If the new data is greater than the current node's data, we will insert
+                #  it into the right subtree. We make a recursive call to insert the new 
+                # data into the right subtree and then link the returned node back to 
+                # the current node's right pointer.
                 cur=self.insert(root.right,data)
                 root.right=cur
         return root
