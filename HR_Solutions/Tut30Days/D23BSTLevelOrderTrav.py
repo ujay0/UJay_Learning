@@ -27,21 +27,29 @@ class Solution:
         return root
 
     def levelOrder(self,root):
+        # Base case: if the tree is empty, return immediately
         if root is None:
             return
         
+        # Initialize a queue to keep track of nodes to visit
         queue = []
         
+        # Start with the root node in the queue
         queue.append(root)
         
+        # Loop until there are no more nodes to visit
         while len(queue) > 0:
+            # Dequeue the front node from the queue
             current_node = queue.pop(0)
             
+            # Print the data of the current node followed by a space
             print(current_node.data, end=' ')
             
+            # If the current node has a left child, enqueue it for later processing
             if current_node.left is not None:
                 queue.append(current_node.left)
             
+            # If the current node has a right child, enqueue it for later processing
             if current_node.right is not None:
                 queue.append(current_node.right)
 
