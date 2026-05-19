@@ -24,18 +24,28 @@ class Solution:
         return root
 
     def getHeight(self,root):
-        #Write your code here
+        # Base case: if the node is None (leaf node's child or empty tree),
+        # return -1 since there are no edges to count
         if root is None:
             return -1
         else:
-            # Calculate the height of each subtree
+            # Recursive call 1: Get the height of the left subtree
+            # This recursively traverses down the left branch until it hits None,
+            # then starts returning heights back up the call stack
             leftHeight = self.getHeight(root.left)
+            
+            # Recursive call 2: Get the height of the right subtree
+            # This recursively traverses down the right branch until it hits None,
+            # then starts returning heights back up the call stack
             rightHeight = self.getHeight(root.right)
-            # Return the maximum of the two heights plus one for the current node
+            
+            # Determine the maximum height between the two subtrees and add 1
+            # The +1 represents the edge from the current node to its taller child
+            # This builds up the final height as the recursion unwinds back to the root
             if leftHeight > rightHeight:
-                return leftHeight + 1
+                return leftHeight + 1  # Left subtree is taller
             else:
-                return rightHeight + 1
+                return rightHeight + 1  # Right subtree is taller or equal
 
 T=int(input())
 myTree=Solution()
