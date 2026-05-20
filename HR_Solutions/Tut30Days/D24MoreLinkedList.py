@@ -37,10 +37,24 @@ class Solution:
         if head is None:
             return head
         current = head
+        # We traverse the linked list using a while loop that continues until we 
+        # reach the end of the list (current.next is None). Inside the loop, 
+        # we compare the data of the current node with the data of the next node. 
+        # If they are equal, it means we have found a duplicate. In this case, we 
+        # update the next pointer of the current node to skip over the duplicate 
+        # node (current.next = current.next.next). This effectively removes the 
+        # duplicate node from the linked list. If the data of the current node 
+        # and the next node are not equal, it means there is no duplicate at this 
+        # position, and we simply move to the next node by updating current to 
+        # current.next. By doing this for every node in the linked list, we ensure 
+        # that all duplicates are removed, and we return the head of the updated 
+        # linked list at the end.
         while current.next is not None:
             if current.data == current.next.data:
                 current.next = current.next.next
             else:
+                # If the current node's data is not equal to the next node's data, 
+                # we simply move to the next node
                 current = current.next
         return head
 
