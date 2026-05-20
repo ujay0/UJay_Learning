@@ -11,6 +11,8 @@ class Node:
     def __init__(self,data):
         self.data = data
         self.next = None 
+
+
 class Solution: 
     def insert(self,head,data):
             p = Node(data)           
@@ -57,6 +59,7 @@ class Solution:
                 # we simply move to the next node
                 current = current.next
         return head
+
 
 mylist= Solution()
 T=int(input('Enter the number of elements in the linked list: '))
