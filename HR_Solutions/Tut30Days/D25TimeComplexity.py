@@ -8,16 +8,22 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
 
 def isPrime(num):
-    divisers = 0
-    i = 1
-    while(divisers<3 and i<=num):
-        if num%i==0:
-            divisers+=1
-        i+=1
-    if divisers==2:
-        return True
-    else:
+    # Handle edge cases
+    if num < 2:
         return False
+    if num == 2:
+        return True
+    if num % 2 == 0:  # Even numbers (except 2) are not prime
+        return False
+    
+    # Check odd divisors only up to √num
+    i = 3
+    while i * i <= num:  # Equivalent to i <= sqrt(num) but avoids sqrt() call
+        if num % i == 0:
+            return False
+        i += 2  # Only check odd numbers
+    
+    return True
 
 T = int(input("Enter the Number of Numbers to Check: "))
 for _ in range(T):
