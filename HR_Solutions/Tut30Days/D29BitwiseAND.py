@@ -10,6 +10,14 @@
 # The function accepts following parameters:
 #  1. INTEGER N
 #  2. INTEGER K
+def bitwiseAnd_UJ(A, B):
+    print("-" * 20)
+    print(f"A: {A}, Binary A: {bin(A)}")
+    print(f"B: {B}, Binary B: {bin(B)}")
+    print(f"A & B: {A & B}")
+    for i in range(1, 5):
+        print(f"Bit {i}: A bit: {(A >> (i - 1)) & 1}, B bit: {(B >> (i - 1)) & 1}, A & B bit: {((A & B) >> (i - 1)) & 1}")
+    print("-" * 20)
 
 
 
