@@ -23,9 +23,13 @@ import sys
 def weightedMean(X, W):
     # Write your code here
     sum_weighted = 0
-    sum_weights = 0
+    weights_sum = 0
     result = 0
-    return round(sum_weighted / sum_weights, 1)
+    for i in range(len(X)):
+        sum_weighted += X[i] * W[i]
+        weights_sum += W[i]
+    result = round(sum_weighted / weights_sum, 1)
+    return result
 
 
 if __name__ == '__main__':
