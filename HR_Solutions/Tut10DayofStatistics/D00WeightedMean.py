@@ -20,6 +20,11 @@ import sys
 #  2. INTEGER_ARRAY W
 #
 
+# Example
+# The array of values X = [1, 2, 3] and their respective weights W = [5, 10, 15]. 
+# Their sum is 1*5 + 2*10 + 3*15 = 5 + 20 + 45 = 70. The sum of weights 
+# is 5 + 10 + 15 = 30. The weighted mean is 70 / 30 = 2.3. Print 2.3 and return.
+
 def weightedMean(X, W):
     # Write your code here
     sum_weighted = 0
@@ -39,5 +44,6 @@ if __name__ == '__main__':
 
     weights = list(map(int, input().rstrip().split()))
 
-    weightedMean(vals, weights)
+    # weightedMean(vals, weights)
+    print(weightedMean(vals, weights))
 
