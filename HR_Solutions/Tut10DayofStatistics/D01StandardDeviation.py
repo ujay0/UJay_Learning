@@ -15,6 +15,10 @@ import sys
 
 def stdDev(arr):
     # Print your answers to 1 decimal place within this function
+    mean = sum(arr) / len(arr)
+    variance = sum((x - mean) ** 2 for x in arr) / len(arr)
+    std_dev = math.sqrt(variance)
+    print(f"{std_dev:.1f}")
     return
 
 if __name__ == '__main__':
