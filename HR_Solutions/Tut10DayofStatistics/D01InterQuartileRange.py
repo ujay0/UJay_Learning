@@ -29,9 +29,25 @@ import sys
 #  2. INTEGER_ARRAY freqs
 #
 
+def median(arr):
+        m = len(arr)
+        if m % 2 == 0:
+            return (arr[m // 2 - 1] + arr[m // 2]) / 2
+        else:
+            return arr[m // 2]
+        
 def interQuartile(values, freqs):
     # Print your answer to 1 decimal place within this function
-    pass
+    data = []
+    for value, freq in zip(values, freqs):
+        data.extend([value] * freq)
+    data.sort()
+    n = len(data)
+    
+    q1 = median(data[:n // 2])
+    q3 = median(data[(n + 1) // 2:])
+    inter_quartile_range = q3 - q1
+    print(f"{inter_quartile_range:.1f}")
 
 if __name__ == '__main__':
     n = int(input().strip())
