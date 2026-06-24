@@ -23,3 +23,22 @@
 
 # On the first line, print the answer to question 1 (i.e., the probability that a car can be assembled in less than 19.5 hours).
 # On the second line, print the answer to question 2 (i.e., the probability that a car can be assembled in between 20 and 22 hours).
+
+from math import erf, sqrt
+
+def normal_cdf(x, mean, std_dev):
+    """Calculate the cumulative distribution function for a normal distribution."""
+    return 0.5 * (1 + erf((x - mean) / (std_dev * sqrt(2))))
+
+# Read input
+mean, std_dev = map(float, input().split())
+x1 = float(input())
+x2_lower, x2_upper = map(float, input().split())
+
+# Calculate probabilities
+prob1 = normal_cdf(x1, mean, std_dev)
+prob2 = normal_cdf(x2_upper, mean, std_dev) - normal_cdf(x2_lower, mean, std_dev)
+
+# Print results
+print(f"{prob1:.3f}")
+print(f"{prob2:.3f}")
