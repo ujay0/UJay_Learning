@@ -7,3 +7,19 @@
 # Less than 19.5 hours?
 # Between 20 and 22 hours?
 
+# Input Format
+# There are 3 lines of input (shown below):
+# 20 2
+# 19.5
+# 20 22
+
+# The first line contains 2 space-separated values denoting the respective mean and standard deviation for X.
+# The second line contains the number associated with question 1.
+# The third line contains space-separated values describing the respective lower and upper range boundaries for question
+
+# Output Format
+# There are two lines of output. Your answers must be rounded to a scale of 3
+# decimal places (i.e., 1.234 format):
+# On the first line, print the answer to question 1 (i.e., the probability that a car can be assembled in less than 19.5 hours).
+# On the second line, print the answer to question 2 (i.e., the probability that a car can be assembled in between 20 and 22 hours).
+
