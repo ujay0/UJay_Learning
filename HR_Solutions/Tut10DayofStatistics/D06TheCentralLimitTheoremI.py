@@ -23,3 +23,23 @@
 
 # Print the probability that the elevator can successfully transport all 49 boxes, rounded to a scale of 4 decimal 
 # places (i.e., 1.2345 format).
+
+
+import math
+from scipy.stats import norm
+
+# Read input values
+max_weight = float(input())
+num_boxes = int(input())
+mean_weight = float(input())
+std_dev = float(input())
+
+# Calculate the mean and standard deviation of the sum of box weights
+sum_mean = num_boxes * mean_weight
+sum_std_dev = math.sqrt(num_boxes) * std_dev
+
+# Calculate the probability using the cumulative distribution function (CDF) of the normal distribution
+prob = norm.cdf(max_weight, loc=sum_mean, scale=sum_std_dev)
+
+# Print the result rounded to 4 decimal places
+print(f"{prob:.4f}")
