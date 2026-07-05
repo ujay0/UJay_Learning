@@ -26,7 +26,7 @@
 
 
 import math
-from scipy.stats import norm
+
 
 # Read input values
 max_weight = float(input())
@@ -39,7 +39,7 @@ sum_mean = num_boxes * mean_weight
 sum_std_dev = math.sqrt(num_boxes) * std_dev
 
 # Calculate the probability using the cumulative distribution function (CDF) of the normal distribution
-prob = norm.cdf(max_weight, loc=sum_mean, scale=sum_std_dev)
+prob = 0.5 * (1 + math.erf((max_weight - sum_mean) / (sum_std_dev * math.sqrt(2))))
 
 # Print the result rounded to 4 decimal places
 print(f"{prob:.4f}")
