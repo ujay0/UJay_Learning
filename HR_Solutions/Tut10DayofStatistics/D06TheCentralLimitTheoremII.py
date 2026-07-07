@@ -25,3 +25,33 @@
 
 # Print the probability that 100 students can successfully purchase the remaining 250 tickets, rounded to a scale of 4
 #  decimal places (i.e., 1.2345 format).
+
+
+import math
+
+
+def cumulative_distribution_function(x, mean, std_dev):
+    z = (x - mean) / std_dev
+    return 0.5 * (1 + math.erf(z / math.sqrt(2)))
+
+# Read Input
+tickets_available = int(input())
+num_students = int(input())
+mean_tickets = float(input())
+std_dev_tickets = float(input())
+
+# Calculate the mean and standard deviation for the total number of tickets purchased by all students
+total_mean = num_students * mean_tickets
+total_std_dev = math.sqrt(num_students) * std_dev_tickets
+
+# Calculate the probability that all students can purchase tickets
+probability = cumulative_distribution_function(tickets_available, total_mean, total_std_dev)
+
+# Print the result rounded to 4 decimal places
+print(f"{probability:.4f}")
+
+
+
+
+
+
