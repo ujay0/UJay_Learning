@@ -28,3 +28,24 @@
 # On the first line, print the value of A.
 # On the second line, print the value of B.
 
+
+print("Enter the sample size:")
+n = int(input())
+print("Enter the mean:")
+u = float(input())
+print("Enter the standard deviation:")
+o = float(input())
+print("Enter the distribution percentage (as a decimal):")
+p = float(input())
+print("Enter the value of z:")
+z = float(input())
+
+critical_value = z
+standard_error = o / (n ** 0.5)
+
+A = u - critical_value * standard_error
+B = u + critical_value * standard_error
+
+print(f"{A:.2f}")
+print(f"{B:.2f}")
+
