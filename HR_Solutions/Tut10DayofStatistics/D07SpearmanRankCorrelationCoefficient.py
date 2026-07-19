@@ -20,3 +20,25 @@
 # Output Format
 # Print the value of the Spearman rank correlation coefficient, rounded to a scale of 3
 # decimal places.
+
+import math
+import numpy as np
+from scipy.stats import rankdata
+
+a = int(input())
+x = list(map(float, input().split()))
+y = list(map(float, input().split()))
+
+rank_x = rankdata(x, method='max')
+rank_y = rankdata(y, method='max')
+
+d = [rank_x[i] - rank_y[i] for i in range(a)]
+
+for i in range(a):
+    d[i] = d[i] ** 2
+    print(d[i])
+    print(d)
+
+print(round(1 - (6 * sum(d)) / (a * (a ** 2 - 1)), 3))
+
+
