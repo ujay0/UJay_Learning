@@ -26,3 +26,28 @@
 # Output Format
 # Print a single line denoting the answer, rounded to a scale of 3 decimal
 #  places (i.e., 1.000 format).
+
+import math
+import os
+import random
+import re
+import sys
+
+a = []
+for _ in range(5):
+    a.append(list(map(int, input().rstrip().split())))
+
+a.sort(key=lambda x: x[0])
+x = [i[0] for i in a]
+y = [i[1] for i in a]
+
+a = sum(x)
+b = sum(y)
+c = sum([i**2 for i in x])
+d = sum([x[i]*y[i] for i in range(len(x))])
+
+n = len(x)
+m = (n*d - a*b) / (n*c - a**2)
+b = (b - m*a) / n
+
+print(f"{b + m*80:.3f}")
