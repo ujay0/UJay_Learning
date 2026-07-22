@@ -33,9 +33,22 @@ import random
 import re
 import sys
 
+# a = []
+# for _ in range(5):
+#     a.append(list(map(int, input().rstrip().split())))
+
+# Read Input from STDIN
+# 5
+# 95 85
+# 85 95
+# 80 70
+# 70 65
+# 60 70
+import sys
 a = []
-for _ in range(5):
-    a.append(list(map(int, input().rstrip().split())))
+for line in sys.stdin:
+    a.append(list(map(int, line.split())))
+    
 
 a.sort(key=lambda x: x[0])
 x = [i[0] for i in a]
