@@ -50,17 +50,26 @@ for line in sys.stdin:
     a.append(list(map(int, line.split())))
     
 
+# Sort the list of tuples based on the first element (x value) of each tuple
 a.sort(key=lambda x: x[0])
+# Extract the x and y values from the sorted list of tuples
 x = [i[0] for i in a]
+# Extract the y values from the sorted list of tuples
 y = [i[1] for i in a]
 
+# Calculate the sum of x values
 a = sum(x)
+# Calculate the sum of y values
 b = sum(y)
+# Calculate the sum of squares of x values and the sum of products of x and y values
 c = sum([i**2 for i in x])
+# Calculate the sum of products of x and y values
 d = sum([x[i]*y[i] for i in range(len(x))])
 
 n = len(x)
+# Calculate the slope (m) of the least squares regression line
 m = (n*d - a*b) / (n*c - a**2)
+# Calculate the y-intercept (b) of the least squares regression line
 b = (b - m*a) / n
 
 print(f"{b + m*80:.3f}")
