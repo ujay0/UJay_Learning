@@ -32,3 +32,22 @@ Task
 # 0.57 0.83
 # 0.56 0.64
 # 0.76 0.18
+
+
+# Output Format
+# For each of the q feature sets, print the respective value of Y on a new line
+# 105.22
+# 142.68
+# 132.94
+# 129.71
+
+
+a = int(input().strip())
+b = int(input().strip())
+c = []
+for _ in range(b):
+    c.append(list(map(float, input().rstrip().split())))
+d = int(input().strip())
+e = []
+for _ in range(d):
+    e.append(list(map(float, input().rstrip().split())))
