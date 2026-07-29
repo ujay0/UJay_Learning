@@ -1,7 +1,6 @@
 #!/bin/python3
 
 # Task
-Task
 # Andrea has a simple equation
     #  Y = a + b1 * f1 + b2 * f2 + ... + bm * fm
 
@@ -19,6 +18,7 @@ Task
 # Andrea wants to query for. Each of the q subsequent lines contains m space-separated decimals describing the feature sets.
 
 # Sample Input
+
 # 2 7
 # 0.18 0.89 109.85
 # 1.0 0.26 155.72
@@ -32,3 +32,36 @@ Task
 # 0.57 0.83
 # 0.56 0.64
 # 0.76 0.18
+
+
+# Output Format
+# For each of the q feature sets, print the respective value of Y on a new line
+# 105.22
+# 142.68
+# 132.94
+# 129.71
+
+import numpy as np
+m, n = map(int, input().strip().split())
+c = []
+for _ in range(n):
+    c.append(list(map(float, input().rstrip().split())))
+q = int(input().strip())
+e = []
+for _ in range(q):
+    e.append(list(map(float, input().rstrip().split())))
+
+A = []
+for i in range(n):
+    A.append(c[i][:-1])
+Y = [c[i][-1] for i in range(n)]
+a = np.array(A)
+Y = np.array(Y)
+# Calculate the coefficients using the normal equation
+coefficients = np.linalg.inv(a.T @ a) @ a.T @ Y
+
+for row in e:
+    #    prediction = coefficients[0] + sum(coefficients[i + 1] * row[i] for i in range(len(row)))
+# IndexError: index 2 is out of bounds for axis 0 with size 2
+    prediction = coefficients[0] + sum(coefficients[i + 1] * row[i] for i in range(len(row)))
+    print(round(prediction, 2))
