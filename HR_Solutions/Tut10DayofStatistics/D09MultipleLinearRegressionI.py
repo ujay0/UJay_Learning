@@ -63,5 +63,5 @@ coefficients = np.linalg.inv(a.T @ a) @ a.T @ Y
 for row in e:
     # prediction = coefficients[0] + sum(coefficients[i + 1] * row[i] for i in range(len(row))) gives IndexError: index 2 is 
     # out of bounds for axis 0 with size 2
-    prediction = coefficients[0] + sum(coefficients[i + 1] * row[i] for i in range(len(row)))
-    print(round(prediction, 2))
+    # prediction = coefficients[0] + sum(coefficients[i + 1] * row[i] for i in range(len(row)))
+    # print(round(prediction, 2))
