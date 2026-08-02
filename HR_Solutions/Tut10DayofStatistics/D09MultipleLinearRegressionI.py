@@ -54,31 +54,13 @@ for _ in range(q):
 A = []
 for i in range(n):
     A.append(c[i][:-1])
-# calculate the predicted values for the new feature sets
-# without the intercept term
-predicted_values = []
+Y = [c[i][-1] for i in range(n)]
+a = np.array(A)
+Y = np.array(Y)
+# Calculate the coefficients using the normal equation
+coefficients = np.linalg.inv(a.T @ a) @ a.T @ Y
 
-# Identified the issue: The coefficients array includes the intercept term as the first element, 
-# but when calculating the predicted values, I mistakenly added the intercept term twice. 
-# The correct approach is to start with the intercept term and then add the contributions of each 
-# feature multiplied by their respective coefficients.
-for features in e:
-    predicted_value = coefficients[0]  # Start with the intercept term
-    for j in range(m):
-        predicted_value += coefficients[j] * features[j]
-    predicted_values.append(predicted_value)
-
-for value in predicted_values:
-    print(round(value, 2))
-    # Expected output:
-    # 105.22
-    # 142.68
-    # 132.94
-    # 129.71
-    # Actual output
-    # 212.19
-    # 289.86
-    # 268.9
-    # 247.27
-
-
+for row in e:
+    prediction = 0
+    prediction = coefficients[0] - sum(coefficients[i] * row[i] for i in range(len(row)))
+    print(round(prediction, 2))
