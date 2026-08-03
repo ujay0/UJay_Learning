@@ -41,26 +41,69 @@
 # 132.94
 # 129.71
 
+# from sklearn import linear_model
+
+# # Read feature count (m) and training rows count (n)
+# m, n = list(map(int, input().strip().split()))
+
+# X = []
+# Y = []
+# for i in range(n):
+#   inp = list(map(float, input().strip().split()))
+#   X.append(inp[:-1])
+#   Y.append(inp[-1])
+
+# # Train Linear Regression model
+# lm = linear_model.LinearRegression()
+# lm.fit(X, Y)
+
+# a = lm.intercept_
+# b = lm.coef_
+
+# # Read number of queries
+# q = int(input())
+# for i in range(q]:
+#   f = list(map(float, input().strip().split()))
+#   # Calculate predicted Y value
+#   res = a + sum([b[j] * f[j] for j in range(m)])
+#   print(round(res, 2))
+
 import numpy as np
-m, n = map(int, input().strip().split())
-c = []
-for _ in range(n):
-    c.append(list(map(float, input().rstrip().split())))
-q = int(input().strip())
-e = []
-for _ in range(q):
-    e.append(list(map(float, input().rstrip().split())))
 
-A = []
+m, n = [int(i) for i in input().strip().split(' ')]
+X = []
+Y = []
+
 for i in range(n):
-    A.append(c[i][:-1])
-Y = [c[i][-1] for i in range(n)]
-a = np.array(A)
-Y = np.array(Y)
-# Calculate the coefficients using the normal equation
-coefficients = np.linalg.inv(a.T @ a) @ a.T @ Y
+    data = input().strip().split(' ')
+    X.append(data[:m])
+    Y.append(data[m:])
 
-for row in e:
-    prediction = 0
-    prediction = coefficients[0] - sum(coefficients[i] * row[i] for i in range(len(row)))
-    print(round(prediction, 2))
+q = int(input().strip())
+X_new = []
+
+for x in range(q):
+    X_new.append(input().strip().split(' '))
+
+X = np.array(X, float)
+Y = np.array(Y, float)
+X_new = np.array(X_new, float)
+
+# center
+X_R = X - np.mean(X, axis=0)
+Y_R = Y - np.mean(Y)
+
+# calculate beta
+beta = np.dot(np.linalg.inv(np.dot(X_R.T, X_R)), np.dot(X_R.T, Y_R))
+
+# predict
+X_new_R = X_new - np.mean(X, axis=0)
+Y_new_R = np.dot(X_new_R, beta)
+Y_new = Y_new_R + np.mean(Y)
+
+# print
+for i in Y_new:
+    # DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, 
+    # and will error in future. Ensure you extract a single element from your array 
+    # before performing this operation. (Deprecated NumPy 1.25.)
+    print(round(float(i.item()), 2))
