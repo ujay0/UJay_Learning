@@ -70,40 +70,44 @@
 
 import numpy as np
 
+# Explaination of the code:
+
+# 1. Read the number of features (m) and the number of observations (n)
 m, n = [int(i) for i in input().strip().split(' ')]
 X = []
 Y = []
 
+# 2. Read the feature sets and their corresponding Y values into X and Y lists
 for i in range(n):
     data = input().strip().split(' ')
     X.append(data[:m])
     Y.append(data[m:])
 
+# 3. Read the number of new feature sets (q) and store them in X_new
 q = int(input().strip())
 X_new = []
 
 for x in range(q):
     X_new.append(input().strip().split(' '))
 
+# 4. Convert X, Y, and X_new to numpy arrays for easier mathematical operations
 X = np.array(X, float)
 Y = np.array(Y, float)
 X_new = np.array(X_new, float)
 
-# center
+# 5. Center the data by subtracting the mean of each feature from the corresponding
+#    feature values in X and the mean of Y from the Y values
 X_R = X - np.mean(X, axis=0)
 Y_R = Y - np.mean(Y)
 
-# calculate beta
+# 6. Calculate the beta coefficients using the normal equation for linear regression
 beta = np.dot(np.linalg.inv(np.dot(X_R.T, X_R)), np.dot(X_R.T, Y_R))
 
-# predict
+# 7. Center the new feature sets (X_new) using the mean of the original
+#    feature sets (X)
 X_new_R = X_new - np.mean(X, axis=0)
 Y_new_R = np.dot(X_new_R, beta)
 Y_new = Y_new_R + np.mean(Y)
 
-# print
 for i in Y_new:
-    # DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, 
-    # and will error in future. Ensure you extract a single element from your array 
-    # before performing this operation. (Deprecated NumPy 1.25.)
     print(round(float(i.item()), 2))
