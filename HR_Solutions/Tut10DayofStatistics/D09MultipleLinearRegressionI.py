@@ -109,5 +109,7 @@ X_new_R = X_new - np.mean(X, axis=0)
 Y_new_R = np.dot(X_new_R, beta)
 Y_new = Y_new_R + np.mean(Y)
 
+# 8. Print the predicted Y values for each of the new feature sets, 
+# rounded to two decimal places
 for i in Y_new:
     print(round(float(i.item()), 2))
