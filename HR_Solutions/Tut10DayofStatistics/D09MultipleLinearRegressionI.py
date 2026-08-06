@@ -15,7 +15,8 @@
 # elements are features (f1, f2, ..., fm), and the last element is the value of Y 
 # for the line's feature set.
 # The next line contains a single integer, q, denoting the number of feature sets 
-# Andrea wants to query for. Each of the q subsequent lines contains m space-separated decimals describing the feature sets.
+# Andrea wants to query for. Each of the q subsequent lines contains m space-separated 
+# decimals describing the feature sets.
 
 # Sample Input
 
