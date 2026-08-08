@@ -15,17 +15,30 @@
 # c-b-a-b-c
 # --c-b-c--
 # ----c----
-#size 5
 
-# --------e--------
-# ------e-d-e------
-# ----e-d-c-d-e----
-# --e-d-c-b-c-d-e--
-# e-d-c-b-a-b-c-d-e
-# --e-d-c-b-c-d-e--
-# ----e-d-c-d-e----
-# ------e-d-e------
-# --------e--------
+#size 10
+
+# ------------------j------------------
+# ----------------j-i-j----------------
+# --------------j-i-h-i-j--------------
+# ------------j-i-h-g-h-i-j------------
+# ----------j-i-h-g-f-g-h-i-j----------
+# --------j-i-h-g-f-e-f-g-h-i-j--------
+# ------j-i-h-g-f-e-d-e-f-g-h-i-j------
+# ----j-i-h-g-f-e-d-c-d-e-f-g-h-i-j----
+# --j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j--
+# j-i-h-g-f-e-d-c-b-a-b-c-d-e-f-g-h-i-j
+# --j-i-h-g-f-e-d-c-b-c-d-e-f-g-h-i-j--
+# ----j-i-h-g-f-e-d-c-d-e-f-g-h-i-j----
+# ------j-i-h-g-f-e-d-e-f-g-h-i-j------
+# --------j-i-h-g-f-e-f-g-h-i-j--------
+# ----------j-i-h-g-f-g-h-i-j----------
+# ------------j-i-h-g-h-i-j------------
+# --------------j-i-h-i-j--------------
+# ----------------j-i-j----------------
+# ------------------j------------------
+
+# 
 
 def print_rangoli(size):
     import string
@@ -34,7 +47,9 @@ def print_rangoli(size):
     # Create the rangoli pattern
     lines = []
     for i in range(size):
+        # Create the line with the appropriate letters and dashes
         s = '-'.join(alphabet[size-1:i:-1] + alphabet[i:size])
+        # Center the line and add it to the list of lines
         lines.append((s).center(size * 4 - 3, '-'))
 
     # Print the rangoli pattern
