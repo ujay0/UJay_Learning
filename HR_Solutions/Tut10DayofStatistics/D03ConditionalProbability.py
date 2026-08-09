@@ -7,10 +7,15 @@
 import math
 from fractions import Fraction
 
+# Function to reduce a fraction to its simplest form
 def reducto(num, den):
+    # Find the greatest common divisor
     pgcd = math.gcd(num, den)
+    # Reduce the numerator and denominator by the gcd
     s_num = num // pgcd
+    # Reduce the denominator by the gcd
     s_den = den // pgcd
+    # Return the reduced numerator and denominator as a tuple
     return s_num, s_den
 
 def prob_direct(nbr_possibilities, favorable_events):
