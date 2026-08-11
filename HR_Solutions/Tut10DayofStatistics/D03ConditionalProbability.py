@@ -26,6 +26,8 @@ def prob_comp(frac):
     return 1 - frac
 
 def Bayne(a,b):
+    # Calculate the probability of event A given event B using Bayes' theorem
+    # P(A|B) = P(A and B) / P(B)
      return a/b
 
 A = prob_direct(2, 1)
