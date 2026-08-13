@@ -26,9 +26,13 @@ def binomial(n, k):
     return factorial(n) // (factorial(k) * factorial(n - k))
 
 if __name__ == "__main__":
+    # Read the percentage of defective pistons and the size of the batch
     p, n = map(float, input("Enter the percentage of defective pistons and the size of the batch: ").split())
+    # Calculate the probabilities for no more than 2 rejects and at least 2 rejects
     p /= 100  # Convert percentage to probability
+    # Calculate the probability of no more than 2 rejects
     total_prob_no_more_than_2 = sum(binomial(int(n), k) * (p ** k) * ((1 - p) ** (n - k)) for k in range(0, 3))
+    # Calculate the probability of at least 2 rejects
     total_prob_at_least_2 = 1 - sum(binomial(int(n), k) * (p ** k) * ((1 - p) ** (n - k)) for k in range(0, 2))
     
     print(f"Probability of no more than 2 rejects: {total_prob_no_more_than_2:.3f}")
