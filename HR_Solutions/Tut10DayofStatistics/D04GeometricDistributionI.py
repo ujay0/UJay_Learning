@@ -20,11 +20,15 @@
 from math import pow
 
 if __name__ == "__main__":
+    # Read the numerator and denominator for the probability of a defect and the inspection number
     p_numerator, p_denominator = map(int, input("Enter the numerator and denominator for the probability of a defect: ").split())
+    # Read the inspection number for the first defect
     inspection_number = int(input("Enter the inspection number for the first defect: "))
-    
-    p = p_numerator / p_denominator  # Probability of defect
-    q = 1 - p  # Probability of non-defect
+
+    # Calculate the probability of a defect
+    p = p_numerator / p_denominator 
+    # Probability of non-defect
+    q = 1 - p 
     
     # Geometric distribution formula: P(X = k) = (1 - p)^(k - 1) * p
     probability_first_defect_on_kth_item = pow(q, inspection_number - 1) * p
