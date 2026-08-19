@@ -29,12 +29,17 @@
 from math import exp, factorial
 
 def poisson_pmf(k, lam):
+    # Poisson distribution formula: P(X = k) = (λ^k * e^(-λ)) / k!
     return (lam ** k) * exp(-lam) / factorial(k)
 
 def expected_cost(lam, cost_function):
+    # Calculate the expected cost for a machine with Poisson-distributed repairs
     total_cost = 0
+    # We will sum over a reasonable range of k values to approximate the expected cost
     for k in range(20):  # Assuming a reasonable upper limit
+        # Calculate the probability of k repairs
         prob = poisson_pmf(k, lam)
+        # Calculate the expected cost contribution for k repairs
         total_cost += prob * cost_function(k)
     return total_cost
 
