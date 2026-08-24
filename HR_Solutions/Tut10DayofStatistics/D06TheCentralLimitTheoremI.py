@@ -28,14 +28,18 @@
 import math
 
 
-# Read input values
+# Input reading Maximum weight the elevator can transport
 max_weight = float(input())
+# Input reading Number of boxes in the cargo
 num_boxes = int(input())
+# Input reading Mean weight of a cargo box
 mean_weight = float(input())
+# Input reading Standard deviation of a cargo box
 std_dev = float(input())
 
-# Calculate the mean and standard deviation of the sum of box weights
+# Calculate the mean of the sum of box weights
 sum_mean = num_boxes * mean_weight
+# Calculate the standard deviation of the sum of box weights
 sum_std_dev = math.sqrt(num_boxes) * std_dev
 
 # Calculate the probability using the cumulative distribution function (CDF) of the normal distribution
