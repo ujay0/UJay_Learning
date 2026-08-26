@@ -30,20 +30,29 @@
 
 
 print("Enter the sample size:")
+# Read Input sample size
 n = int(input())
 print("Enter the mean:")
+# Read Input mean
 u = float(input())
 print("Enter the standard deviation:")
+# Read Input standard deviation
 o = float(input())
 print("Enter the distribution percentage (as a decimal):")
+# Read Input distribution percentage
 p = float(input())
 print("Enter the value of z:")
+# Read Input value of z
 z = float(input())
 
+# Calculate the critical value and standard error
 critical_value = z
+# Calculate the standard error
 standard_error = o / (n ** 0.5)
 
+# Calculate the interval A and B
 A = u - critical_value * standard_error
+# Calculate the upper bound B
 B = u + critical_value * standard_error
 
 print(f"{A:.2f}")
