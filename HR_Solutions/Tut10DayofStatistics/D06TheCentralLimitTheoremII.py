@@ -34,14 +34,18 @@ def cumulative_distribution_function(x, mean, std_dev):
     z = (x - mean) / std_dev
     return 0.5 * (1 + math.erf(z / math.sqrt(2)))
 
-# Read Input
+# Read Input number of last-minute tickets available at the box office
 tickets_available = int(input())
+# Read Input n umber of students waiting to buy tickets
 num_students = int(input())
+# Read Input mean number of purchased tickets
 mean_tickets = float(input())
+# Read Input standard deviation of purchased tickets
 std_dev_tickets = float(input())
 
-# Calculate the mean and standard deviation for the total number of tickets purchased by all students
+# Calculate the mean for the total number of tickets purchased by all students
 total_mean = num_students * mean_tickets
+# Calculate the standard deviation for the total number of tickets purchased by all students
 total_std_dev = math.sqrt(num_students) * std_dev_tickets
 
 # Calculate the probability that all students can purchase tickets
