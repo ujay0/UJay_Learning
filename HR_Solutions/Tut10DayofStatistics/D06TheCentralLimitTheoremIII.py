@@ -55,6 +55,8 @@ A = u - critical_value * standard_error
 # Calculate the upper bound B
 B = u + critical_value * standard_error
 
+# Print the results rounded to 2 decimal places
 print(f"{A:.2f}")
+# Print the upper bound B rounded to 2 decimal places
 print(f"{B:.2f}")
 
