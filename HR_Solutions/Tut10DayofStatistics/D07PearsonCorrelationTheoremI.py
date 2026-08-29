@@ -20,8 +20,11 @@
 
 # Print the value of the Pearson correlation coefficient, rounded to a scale of 3 decimal places.
 
+# input data
 n = int(input())
+# variables to hold the data sets
 x = list(map(float, input().split()))
+# variables to hold the data sets
 y = list(map(float, input().split()))
 
 a = sum(x) / n
