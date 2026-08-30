@@ -25,20 +25,31 @@ import math
 import numpy as np
 from scipy.stats import rankdata
 
+# Input data
 a = int(input())
+# variables to hold the data sets
 x = list(map(float, input().split()))
+# variables to hold the data sets
 y = list(map(float, input().split()))
 
+# rank the data sets
 rank_x = rankdata(x, method='max')
+# rank the data sets
 rank_y = rankdata(y, method='max')
 
+# calculate the difference between the ranks
 d = [rank_x[i] - rank_y[i] for i in range(a)]
 
+# calculate the Spearman rank correlation coefficient
 for i in range(a):
+    # square the difference between the ranks
     d[i] = d[i] ** 2
+    # print the squared difference between the ranks
     print(d[i])
+    # print the array of squared differences
     print(d)
 
+# finally, calculate the Spearman rank correlation coefficient
 print(round(1 - (6 * sum(d)) / (a * (a ** 2 - 1)), 3))
 
 
