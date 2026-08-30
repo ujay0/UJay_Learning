@@ -6,17 +6,18 @@
 
 # for (m+1) real constants (a, b1, b2, ..., bm). We can say that the value 
 # of Y depends on m features. Andrea studies this equation for n
-# different feature sets (f1, f2, ..., fm) and records each respective value of Y.
-# If she has q new feature sets, can you help Andrea find the value of Y for each of the sets?
+# different feature sets (f1, f2, ..., fm) and records each respective 
+# value of Y. If she has q new feature sets, can you help Andrea find the 
+# value of Y for each of the sets?
 # Input Format
-# The first line contains 2 space-separated integers, m (the number of observed features) 
-# and n (the number of feature sets Andrea studied), respectively.
-# Each of the n subsequent lines contain m+1 space-separated decimals; the first m 
-# elements are features (f1, f2, ..., fm), and the last element is the value of Y 
-# for the line's feature set.
+# The first line contains 2 space-separated integers, m (the number of 
+# observed features) and n (the number of feature sets Andrea studied),
+# respectively. Each of the n subsequent lines contain m+1 space-separated
+# decimals; the first m elements are features (f1, f2, ..., fm), and the last 
+# element is the value of Y for the line's feature set.
 # The next line contains a single integer, q, denoting the number of feature sets 
-# Andrea wants to query for. Each of the q subsequent lines contains m space-separated 
-# decimals describing the feature sets.
+# Andrea wants to query for. Each of the q subsequent lines contains m 
+# space-separated decimals describing the feature sets.
 
 # Sample Input
 
